@@ -22,3 +22,11 @@ after_success:
   - docker push jrowbotham93/multi-worker
   - docker push jrowbotham93/multi-server
   - docker push jrowbotham93/multi-nginx
+
+region: 'eu-west-2'
+app: 'multi-docker'
+env: 'MultiDocker-env'
+bucket_name: 'elasticbeanstalk-eu-west-2-951823300441'
+bucket_path: 'multi-docker'
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
