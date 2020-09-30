@@ -25,7 +25,7 @@ after_success:
 
 region: 'eu-west-2'
 app: 'multi-docker'
-env: 'MultiDocker-env'
+env: 'MultiDocker-env-1'
 bucket_name: 'elasticbeanstalk-eu-west-2-951823300441'
 bucket_path: 'multi-docker'
 access_key_id: $AWS_ACCESS_KEY
