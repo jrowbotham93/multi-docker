@@ -6,19 +6,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t jrowbotham/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t jrowbotham93/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true jrowbotham/react-test npm test
+  - docker run -e CI=true jrowbotham93/react-test npm test
 
 after_success:
-  - docker build -t jrowbotham/multi-client ./client
-  - docker build -t jrowbotham/multi-worker ./worker
-  - docker build -t jrowbotham/multi-server ./server
-  - docker build -t jrowbotham/multi-nginx ./nginx
+  - docker build -t jrowbotham93/multi-client ./client
+  - docker build -t jrowbotham93/multi-worker ./worker
+  - docker build -t jrowbotham93/multi-server ./server
+  - docker build -t jrowbotham93/multi-nginx ./nginx
   # password from travis and pipe into next command as stdin
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push jrowbotham/multi-client
-  - docker push jrowbotham/multi-worker
-  - docker push jrowbotham/multi-server
-  - docker push jrowbotham/multi-nginx
+  - docker push jrowbotham93/multi-client
+  - docker push jrowbotham93/multi-worker
+  - docker push jrowbotham93/multi-server
+  - docker push jrowbotham93/multi-nginx
