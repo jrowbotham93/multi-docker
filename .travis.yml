@@ -24,6 +24,7 @@ after_success:
   - docker push jrowbotham93/multi-nginx
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: eu-west-2
   app: multi-docker
